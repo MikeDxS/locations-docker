@@ -1,8 +1,7 @@
 FROM node
 WORKDIR /usr/src/app
 COPY package*.json ./
-RUN npm install -g @angular/cli @angular-devkit/build-angular
-RUN npm install
+RUN npm install -g @angular/cli @angular-devkit/build-angular && npm install
 COPY . .
 
 EXPOSE 4200
