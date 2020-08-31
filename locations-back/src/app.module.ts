@@ -10,7 +10,7 @@ import { Location } from './locations/locations.entity';
   imports: [TypeOrmModule.forRoot({
     type: 'postgres',
     host: 'db',
-    port: 54320,
+    port: 5432,
     username: 'locationsdba',
     password: 'secreto',
     database: 'locations_test',
