@@ -1,7 +1,7 @@
 FROM node
 WORKDIR /usr/src/app
 COPY package*.json ./
-RUN npm install @angular/cli
+RUN npm install -g @angular/cli
 RUN npm install
 COPY . .
 
