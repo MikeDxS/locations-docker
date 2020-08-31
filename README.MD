@@ -10,4 +10,4 @@ $ docker-compose build
 $ docker-compose up
 ```
 
-Y por último entrar a http://localhost:4200/
+Y por último entrar a http://localhost:8080/
