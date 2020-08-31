@@ -1,0 +1,23 @@
+<h2>Lista de Lugares de {{ name }}</h2>
+<p><strong>Area:</strong> {{ area }} m2</p>
+<a [routerLink]="['/new', id]" class="btn btn-success">Agregar</a>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Area (m2)</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let location of interLocations">
+        <td>{{ location.name }}</td>
+        <td>{{ location.area }}</td>
+        <td>
+          <a class="btn btn-primary" [href]="'/list/'+location.id">Ver</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

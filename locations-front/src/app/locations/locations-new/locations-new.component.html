@@ -1,0 +1,21 @@
+<h3>Nuevo Lugar</h3>
+<div class="container">
+  <div *ngIf="isOk" class="alert alert-success" role="alert">
+      Accion exitosa
+  </div>
+
+  <div *ngIf="isError" class="alert alert-danger" role="alert">
+    {{ errorMessage }}
+  </div>
+
+  <div class="form-group">
+    <label>Nombre:</label>
+    <input class="form-control" type="text" name="name" [(ngModel)]="name">
+  </div>
+  <div class="form-group">
+    <label>Area:</label>
+    <input class="form-control" type="number" name="area" min="1" [(ngModel)]="area">
+  </div>
+  <button class="btn btn-primary" (click)="insertLocation()">Agregar</button>
+  <a class="btn btn-secondary" routerLink="/">Volver</a>
+</div>

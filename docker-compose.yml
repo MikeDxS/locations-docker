@@ -1,0 +1,26 @@
+version: '2'
+services:
+    db:
+        image: postgres
+        ports:
+            - "54320:5432"
+        environment:
+            POSTGRES_PASSWORD: secreto
+            POSTGRES_USER: locationsdba
+            POSTGRES_DB: locations_test
+    back:
+        build: ./locations-back
+        links:
+            - db
+        ports:
+            - "5000:3000"
+        volumes:
+            - ./locations-back:/usr/src/app
+    front:
+        build: ./locations-front
+        links:
+            - back
+        ports:
+            - "4200:4200"
+        volumes:
+            - ./locations-front:/usr/src/app

@@ -1,0 +1,24 @@
+<h2>Lista de Lugares</h2>
+<a routerLink="/new" class="btn btn-success">Agregar</a>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Area (m2)</th>
+        <th>De</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let location of locations">
+        <td>{{ location.name }}</td>
+        <td>{{ location.area }}</td>
+        <td>{{ location.parentLocation? location.parentLocation.name : '' }}</td>
+        <td>
+          <a class="btn btn-primary" [routerLink]="['/list', location.id]">Ver</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
