@@ -5,5 +5,8 @@ COPY . .
 RUN npm install -g @angular/cli
 RUN npm install --save-dev @angular-devkit/build-angular
 RUN npm install
-EXPOSE 4200
-CMD [ "ng", "serve", "--Host", "0.0.0.0" ]
+RUN npm run build
+WORKDIR /usr/src/app/dist/locations-front
+RUN npm install -g live-server
+EXPOSE 8080
+CMD [ "live-server" ]
