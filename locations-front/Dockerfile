@@ -5,6 +5,5 @@ RUN npm install -g @angular/cli
 RUN npm install --save-dev @angular-devkit/build-angular
 RUN npm install
 COPY . .
-
 EXPOSE 4200
-CMD [ "ng", "serve", "--Host", "0.0.0.0" ]
+CMD [ "npm", "start"]
