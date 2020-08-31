@@ -1,7 +1,7 @@
-FROM node
+FROM node:10
 WORKDIR /usr/src/app
 COPY package*.json ./
-RUN npm i --only=dev && npm install
+RUN npm install
 COPY . .
 
 EXPOSE 4200
