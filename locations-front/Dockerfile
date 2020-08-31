@@ -1,8 +1,9 @@
 FROM node
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-RUN npm install -g @angular/cli
+COPY package*.json ./
+RUN npm install @angular/cli
 RUN npm install
+COPY . .
 
 EXPOSE 4200
 CMD [ "npm", "start" ]

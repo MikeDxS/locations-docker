@@ -1,8 +1,8 @@
 FROM node
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-RUN npm install -g @nestjs/cli
+COPY package*.json ./
+RUN npm install @nestjs/cli
 RUN npm install
+COPY . .
 
 EXPOSE 5000
 CMD [ "npm", "start" ]
